@@ -1,10 +1,19 @@
 """MCP server that gives the expense reviewer agent access to
 cases/expense/expense.db over stdio.
 
-Story 1.2 (this file's first version): CAP-2 (get_claim) and CAP-3
-(get_employee) only. Later stories in Epic 1 add get_policy_limits,
-record_decision, and the cross-claim line-item lookup to this same
-server -- no policy or decision logic runs here, ever.
+Story 1.2 added CAP-2 (get_claim) and CAP-3 (get_employee). Story 1.3
+adds CAP-4 (get_policy_limits). Later stories add record_decision and
+the cross-claim line-item lookup -- no policy or decision logic runs
+here, ever; the tools just make the data queryable.
+
+Decision on get_policy_limits, level/city not in limits.csv (flagged as
+an open risk in SPEC-expense-epic-1's Story 3): reject with ValueError,
+the same way get_claim/get_employee reject an unknown ID, rather than
+silently falling back to a default or an adjacent city's limits. A
+missing combo means the policy data itself is incomplete for that
+employee, and that should surface loudly, not get guessed at by a tool.
+In today's seed data every level x city combo is present (checked: 4
+levels x 5 cities = 20/20), so this only bites if limits.csv changes.
 """
 
 import sqlite3
@@ -50,6 +59,17 @@ def get_employee(employee_id: str) -> dict:
     if not employees:
         raise ValueError(f"No employee with ID {employee_id}")
     return employees[0]
+
+
+@server.tool()
+def get_policy_limits(level: str, city: str) -> dict:
+    """Return the per-category CAD limits (meals, hotel, flight, ground) for a level and city."""
+    rows = _query(
+        "SELECT category, limit_cad FROM limits WHERE level = ? AND city = ?", level, city
+    )
+    if not rows:
+        raise ValueError(f"No policy limits defined for level={level}, city={city}")
+    return {row["category"]: row["limit_cad"] for row in rows}
 
 
 if __name__ == "__main__":

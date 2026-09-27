@@ -64,3 +64,38 @@ def test_get_employee_returns_level_and_city(db):
 def test_get_employee_unknown_id_raises(db):
     with pytest.raises(ValueError):
         expense_server.get_employee("E-999")
+
+
+def test_get_policy_limits_returns_all_categories_for_known_pair(db):
+    limits = expense_server.get_policy_limits("L1", "Toronto")
+
+    assert limits == {"meals": 60, "hotel": 180, "flight": 600, "ground": 80}
+
+
+def test_get_policy_limits_values_are_numeric_not_strings(db):
+    limits = expense_server.get_policy_limits("L1", "Toronto")
+
+    assert isinstance(limits["meals"], int)
+
+
+def test_get_policy_limits_missing_combo_raises(db):
+    # L1/Paris isn't in the seed data -- must reject loudly, not fall back.
+    with pytest.raises(ValueError):
+        expense_server.get_policy_limits("L1", "Paris")
+
+
+def test_get_policy_limits_every_seed_combo_is_covered(db):
+    # Documents the decision behind the ValueError above: today's seed data
+    # has no gaps, so this only ever raises for combos outside the seed.
+    import sqlite3
+
+    conn = sqlite3.connect(db)
+    try:
+        levels = [r[0] for r in conn.execute("SELECT DISTINCT level FROM employees")]
+        cities = [r[0] for r in conn.execute("SELECT DISTINCT city FROM employees")]
+    finally:
+        conn.close()
+
+    for level in levels:
+        for city in cities:
+            expense_server.get_policy_limits(level, city)  # must not raise
