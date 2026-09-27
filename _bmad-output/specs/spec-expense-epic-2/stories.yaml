@@ -1,0 +1,44 @@
+- id: "1"
+  title: Agent scaffold, entry point, and provider switch
+  description: >-
+    Implements CAP-1 and CAP-2: a create_agent-based agent wired to
+    mcp/expense_server.py's five tools via langchain-mcp-adapters, MLflow
+    tracing (sqlite:///mlflow.db, expense-reviewer experiment), and a
+    cases/expense/review_claim.py entry point. Gemini/Groq switch via
+    PROVIDER/MODEL env vars, mirroring the triage agent. No policy
+    precedence logic yet -- that's Story 2.
+
+- id: "2"
+  title: Precedence-order decision logic
+  description: >-
+    Implements CAP-3: given a line item and its context (employee limits,
+    receipt/date/amount), apply POLICY.md's fixed precedence (3, 5.1,
+    1.2, 4.1, limits 2/6, 1.3) and return the deciding clause.
+  invoke_dev_with: >-
+    Before trusting this against eval/labelled.csv, hand-check whether any
+    of the 30 labelled claims produce a genuine precedence tie (two
+    clauses that could both apply with different outcomes). If one turns
+    up, stop and flag it -- don't invent a tie-break order beyond what
+    POLICY.md states.
+
+- id: "3"
+  title: Cross-item math -- same-day sums and cross-claim duplicates
+  description: >-
+    Implements CAP-4: same-day aggregation for meals (2.1) and ground
+    transport (6.1) so every line item that date shares the day's
+    decision, plus cross-claim duplicate detection (5.1) via Epic 1's
+    get_employee_line_items. Builds on Story 2's decision function.
+
+- id: "4"
+  title: Held-for-approval marking
+  description: >-
+    Implements CAP-5: flag every decision==approve line item over $500 as
+    held. A pure function of decision+amount -- no new database state,
+    no payout logic, no blocking prompt.
+
+- id: "5"
+  title: Prompt-injection resistance
+  description: >-
+    Implements CAP-6: verify the agent decides purely on POLICY.md fields
+    (amount/date/category/receipt) even when purpose/description/merchant
+    contain embedded instructions, mirroring triage Epic 2's T-1099 case.

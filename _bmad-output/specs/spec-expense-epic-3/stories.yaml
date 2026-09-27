@@ -1,0 +1,20 @@
+- id: "1"
+  title: Eval harness scaffold and code scorers
+  description: >-
+    Implements CAP-1 through CAP-4: mlflow.genai.evaluate wiring against
+    eval/labelled.csv, driving the Epic 2 agent, plus decision_match,
+    clause_match, and reimbursable_total_match -- all deterministic, no
+    LLM involved.
+
+- id: "2"
+  title: LLM judge
+  description: >-
+    Implements CAP-5: rationale_judge via ChatGroq (JUDGE_MODEL,
+    GROQ_API_KEY), scoring explanation clarity and clause citation
+    pass/fail for each labelled line item.
+
+- id: "3"
+  title: Report output
+  description: >-
+    Implements CAP-6: prints scorer means and the held-for-approval
+    count, and writes cases/expense/eval/latest_report.json.
