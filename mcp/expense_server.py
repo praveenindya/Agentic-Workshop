@@ -2,11 +2,11 @@
 cases/expense/expense.db over stdio.
 
 Story 1.2 added CAP-2 (get_claim) and CAP-3 (get_employee). Story 1.3
-added CAP-4 (get_policy_limits). Story 1.4 adds CAP-5 (record_decision).
-A later story adds the cross-claim line-item lookup. No policy or
-decision logic runs here, ever -- the tools just make data queryable
-and let a decision get written down; deciding what to write is Epic 2's
-job.
+added CAP-4 (get_policy_limits). Story 1.4 added CAP-5 (record_decision).
+Story 1.5 adds CAP-6, the cross-claim line-item lookup. That's the last
+tool in Epic 1: no policy or decision logic runs here, ever -- the
+tools just make data queryable and let a decision get written down;
+deciding what to write is Epic 2's job.
 
 Decision on get_policy_limits, level/city not in limits.csv (flagged as
 an open risk in SPEC-expense-epic-1's Story 3): reject with ValueError,
@@ -22,6 +22,12 @@ read-only seed data), so record_decision creates it itself, once, with
 CREATE TABLE IF NOT EXISTS. Each call inserts exactly one row -- no
 upsert, no dedup -- per CAP-5's success criteria; anything smarter than
 that (e.g. re-deciding a line item) is Epic 2/3 territory.
+
+Decision on CAP-6's name/signature (flagged as an open question in
+SPEC-expense-epic-1): `get_employee_line_items(employee_id)`, the exact
+name the spec's Open Questions section floated -- a plain join over the
+existing claims/line_items tables by employee_id, not a new tracking
+mechanism, matching the spec's stated approach.
 """
 
 import sqlite3
@@ -97,6 +103,21 @@ def record_decision(line_id: str, decision: str, clause: str) -> dict:
         )
         conn.commit()
     return {"line_id": line_id, "decision": decision, "clause": clause}
+
+
+@server.tool()
+def get_employee_line_items(employee_id: str) -> list[dict]:
+    """Return every line item across all of an employee's existing claims, for duplicate detection (POLICY.md §5.1)."""
+    return _query(
+        """
+        SELECT line_items.*
+        FROM line_items
+        JOIN claims ON line_items.claim_id = claims.claim_id
+        WHERE claims.employee_id = ?
+        ORDER BY line_items.line_id
+        """,
+        employee_id,
+    )
 
 
 if __name__ == "__main__":

@@ -133,3 +133,19 @@ def test_record_decision_called_twice_writes_two_rows(db):
     finally:
         conn.close()
     assert count == 2
+
+
+def test_get_employee_line_items_spans_every_existing_claim(db):
+    # E-101 has four claims in the seed data (CL-2001/2013/2025/2037) --
+    # the whole point of CAP-6 is not stopping at just one of them.
+    items = expense_server.get_employee_line_items("E-101")
+
+    claim_ids = {item["claim_id"] for item in items}
+    assert claim_ids == {"CL-2001", "CL-2013", "CL-2025", "CL-2037"}
+    assert len(items) == 16
+
+
+def test_get_employee_line_items_unknown_employee_returns_empty(db):
+    # No claims at all is a valid (if boring) answer, not an error -- this
+    # tool answers "what does the record show", it doesn't validate IDs.
+    assert expense_server.get_employee_line_items("E-999") == []
