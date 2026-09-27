@@ -1,0 +1,37 @@
+- id: "1"
+  title: Eval entrypoint
+  description: >-
+    Implements CAP-1: the data pipeline that drives the Epic 2 agent over
+    all 30 labelled claims in one pass, logging exactly one MLflow run.
+
+- id: "2"
+  title: Code scorers against labelled examples
+  description: >-
+    Implements CAP-2 (decision_match), CAP-3 (clause_match), and CAP-4
+    (reimbursable_total_match) -- all three read the agent's output and
+    diff it against eval/labelled.csv.
+  invoke_dev_with: >-
+    CAP-4 needs amounts from seed/line_items.csv joined by line_id --
+    eval/labelled.csv itself has no amount column. Don't assume it's
+    there.
+
+- id: "3"
+  title: The judge scorer
+  description: >-
+    Implements CAP-5: the Groq-hosted judge scoring explanation clarity
+    and clause-citation correctness. Isolated as the one capability with
+    an external API dependency.
+
+- id: "4"
+  title: Counter-metric guard and report output
+  description: >-
+    Implements CAP-6 (flag-rate visibility) and CAP-7 (printed means plus
+    a written report file) together -- both summarize the same completed
+    run.
+
+- id: "5"
+  title: Holdout live scoring
+  description: >-
+    Implements CAP-8: run the same judge-scoring pipeline against a
+    single unlabelled claim id, for live scoring of the 10 holdout claims
+    during the demo. Depends on Stories 1-3 already working.
