@@ -1,0 +1,81 @@
+level,city,category,limit_cad
+L1,Toronto,meals,60
+L1,Toronto,hotel,180
+L1,Toronto,flight,600
+L1,Toronto,ground,80
+L1,Vancouver,meals,63
+L1,Vancouver,hotel,189
+L1,Vancouver,flight,600
+L1,Vancouver,ground,84
+L1,Montreal,meals,57
+L1,Montreal,hotel,171
+L1,Montreal,flight,600
+L1,Montreal,ground,76
+L1,New York,meals,78
+L1,New York,hotel,234
+L1,New York,flight,600
+L1,New York,ground,104
+L1,London,meals,75
+L1,London,hotel,225
+L1,London,flight,600
+L1,London,ground,100
+L2,Toronto,meals,75
+L2,Toronto,hotel,220
+L2,Toronto,flight,700
+L2,Toronto,ground,80
+L2,Vancouver,meals,79
+L2,Vancouver,hotel,231
+L2,Vancouver,flight,700
+L2,Vancouver,ground,84
+L2,Montreal,meals,71
+L2,Montreal,hotel,209
+L2,Montreal,flight,700
+L2,Montreal,ground,76
+L2,New York,meals,98
+L2,New York,hotel,286
+L2,New York,flight,700
+L2,New York,ground,104
+L2,London,meals,94
+L2,London,hotel,275
+L2,London,flight,700
+L2,London,ground,100
+L3,Toronto,meals,90
+L3,Toronto,hotel,260
+L3,Toronto,flight,900
+L3,Toronto,ground,100
+L3,Vancouver,meals,94
+L3,Vancouver,hotel,273
+L3,Vancouver,flight,900
+L3,Vancouver,ground,105
+L3,Montreal,meals,86
+L3,Montreal,hotel,247
+L3,Montreal,flight,900
+L3,Montreal,ground,95
+L3,New York,meals,117
+L3,New York,hotel,338
+L3,New York,flight,900
+L3,New York,ground,130
+L3,London,meals,112
+L3,London,hotel,325
+L3,London,flight,900
+L3,London,ground,125
+L4,Toronto,meals,120
+L4,Toronto,hotel,340
+L4,Toronto,flight,2500
+L4,Toronto,ground,150
+L4,Vancouver,meals,126
+L4,Vancouver,hotel,357
+L4,Vancouver,flight,2500
+L4,Vancouver,ground,158
+L4,Montreal,meals,114
+L4,Montreal,hotel,323
+L4,Montreal,flight,2500
+L4,Montreal,ground,142
+L4,New York,meals,156
+L4,New York,hotel,442
+L4,New York,flight,2500
+L4,New York,ground,195
+L4,London,meals,150
+L4,London,hotel,425
+L4,London,flight,2500
+L4,London,ground,188

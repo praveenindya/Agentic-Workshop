@@ -87,3 +87,12 @@ Each block has a finished checkpoint. Ask your agent to switch you to it:
 - `run_agent.py`: runs the agent on one ticket, with MLflow tracing on.
 - `_bmad-output/specs/`: the specs and stories for each epic, written with BMad.
 - `.claude/skills/`, `.agents/skills/`, `skills-lock.json`: the eight skills above. BMad's skills land beside them when you install it, git-ignored.
+
+## Sunday
+
+The two business cases are in `cases/`. Pick one, then ask your agent to read the brief:
+
+- `cases/expense/`: an expense claim reviewer. Numbers and rules, with a gate on payouts over $500.
+- `cases/leads/`: an inbound lead qualifier. Judgment and writing, with a gate on sending replies.
+
+Each case has 30 labelled examples to build against. The last 10 records in each have no labels here; they're scored live during the demos.

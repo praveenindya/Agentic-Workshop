@@ -1,0 +1,13 @@
+employee_id,name,level,city,department
+E-101,Priya Nair,L2,Toronto,Sales
+E-102,Marcus Chen,L3,Vancouver,Engineering
+E-103,Sofia Rossi,L1,Montreal,Support
+E-104,Daniel Okafor,L4,Toronto,Leadership
+E-105,Hannah Kim,L2,New York,Marketing
+E-106,Luca Bianchi,L3,London,Sales
+E-107,Amara Diallo,L1,Toronto,Finance
+E-108,Tomás García,L2,Vancouver,Engineering
+E-109,Grace Liu,L3,Toronto,Product
+E-110,Noah Tremblay,L1,Montreal,Operations
+E-111,Olivia Brown,L4,New York,Leadership
+E-112,Arjun Mehta,L2,London,Customer Success

@@ -6,6 +6,7 @@ app.db
 mlflow.db
 mlruns/
 eval/latest_report.json
+cases/*/*.db
 
 # BMad is installed per person, for their own tool
 _bmad/

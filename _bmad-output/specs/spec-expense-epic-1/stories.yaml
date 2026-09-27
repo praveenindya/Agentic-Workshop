@@ -1,0 +1,41 @@
+- id: "1"
+  title: Load expense seed data into SQLite
+  description: >-
+    Implements CAP-1: one command loads cases/expense/seed/*.csv (claims,
+    employees, limits, line_items) into a local SQLite database, matching
+    CSV columns. Running it twice must produce an identical database.
+
+- id: "2"
+  title: Claim and employee lookup tools
+  description: >-
+    Implements CAP-2 (get_claim) and CAP-3 (get_employee) as MCP tools.
+    Verify each against specific known seed rows, not just "it returns
+    something."
+
+- id: "3"
+  title: Policy limits lookup tool
+  description: >-
+    Implements CAP-4 (get_policy_limits). Must also decide and test the
+    behavior when a level/city combo is absent from limits.csv -- flagged
+    as an unresolved risk in review, not yet decided anywhere upstream.
+  invoke_dev_with: >-
+    Before writing this tool, check whether every level x city combo in
+    the PRD's scope actually has a row in limits.csv. If any are missing,
+    pick a defined behavior (reject, error, or fallback) and say so in the
+    story spec -- do not leave it implicit.
+
+- id: "4"
+  title: Record-decision write tool
+  description: >-
+    Implements CAP-5 (record_decision). Writes one row to a decisions
+    table given a line ID, decision, and clause. Testable by calling it
+    directly -- no agent or policy logic runs in this story.
+
+- id: "5"
+  title: Cross-claim line-item lookup tool
+  description: >-
+    Implements CAP-6: a plain join over claims/line_items returning an
+    employee's line items across all their existing claims, not a
+    separate history-tracking mechanism. Exact tool name/signature is
+    still open per SPEC.md's Open Questions -- settle it in this story's
+    spec.

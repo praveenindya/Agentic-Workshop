@@ -32,3 +32,11 @@ A support-ticket triage agent built spec-first with BMad: a LangChain agent call
 
 - Agent: Gemini through `ChatGoogleGenerativeAI`. Model from `MODEL` (default `gemini-3.8-flash`), key from `GEMINI_API_KEY`.
 - Backup and judge: Groq through `ChatGroq`. Set `PROVIDER=groq` to run the agent on Groq. Judge model from `JUDGE_MODEL` (default `openai/gpt-oss-120b`), key from `GROQ_API_KEY`.
+
+## Sunday: the business cases
+
+- Each case lives in `cases/expense/` or `cases/leads/`. Work inside your case's folder, and write your intent there as `cases/<case>/INTENT.md`.
+- `BRIEF.md`, `POLICY.md`, `ICP.md`, `seed/` and `eval/` inside a case are read-only.
+- Keep Saturday's triage code working; don't change it for Sunday's case.
+- Your case's eval reads `cases/<case>/eval/labelled.csv`, the way Saturday's reads `eval/labelled_tickets.csv`; don't move the labels into an MLflow dataset.
+- The approval gate is not optional: payouts over $500 (expense) and sending a reply (leads) wait for a person's yes.

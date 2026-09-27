@@ -1,0 +1,160 @@
+line_id,claim_id,date,city,category,merchant,amount,has_receipt,description
+L-3001,CL-2001,2026-08-03,Toronto,flight,United,546.57,yes,Economy return flight
+L-3002,CL-2001,2026-08-03,Toronto,hotel,Marriott,187.04,yes,"Hotel, one night"
+L-3003,CL-2001,2026-08-04,Toronto,meals,The Keg,41.34,yes,Dinner
+L-3004,CL-2001,2026-08-04,Toronto,ground,City Taxi,25.34,yes,Taxi to client office
+L-3005,CL-2002,2026-08-05,Montreal,flight,United,795.43,yes,Economy return flight
+L-3006,CL-2002,2026-08-05,Montreal,hotel,Hilton,217.19,yes,"Hotel, one night"
+L-3007,CL-2002,2026-08-06,Montreal,meals,Bistro Nord,70.05,yes,Dinner
+L-3008,CL-2002,2026-08-06,Montreal,ground,Uber,53.83,yes,Taxi to client office
+L-3009,CL-2003,2026-08-07,Vancouver,flight,United,375.46,yes,Economy return flight
+L-3010,CL-2003,2026-08-07,Vancouver,hotel,Holiday Inn,171.94,yes,"Hotel, one night"
+L-3011,CL-2003,2026-08-08,Vancouver,meals,Sweetgreen,40.68,yes,Dinner
+L-3012,CL-2003,2026-08-08,Vancouver,ground,City Taxi,26.23,yes,Taxi to client office
+L-3013,CL-2004,2026-08-09,Toronto,flight,Air Canada,2114.09,yes,Economy return flight
+L-3014,CL-2004,2026-08-09,Toronto,hotel,Marriott,281.31,yes,"Hotel, one night"
+L-3015,CL-2004,2026-08-10,Toronto,meals,Noodle House,82.29,yes,Dinner
+L-3016,CL-2004,2026-08-11,Toronto,meals,Sweetgreen,134.4,yes,Client dinner
+L-3017,CL-2005,2026-08-11,Montreal,flight,United,593.53,yes,Economy return flight
+L-3018,CL-2005,2026-08-11,Montreal,hotel,Hilton,168.87,yes,"Hotel, one night"
+L-3019,CL-2005,2026-08-12,Montreal,meals,Earls Kitchen,37.1,yes,Dinner
+L-3020,CL-2005,2026-08-13,Montreal,meals,Pret A Manger,102.95,yes,Client dinner
+L-3021,CL-2006,2026-08-13,New York,flight,WestJet,686.24,yes,Economy return flight
+L-3022,CL-2006,2026-08-13,New York,hotel,Marriott,241.58,yes,"Hotel, one night"
+L-3023,CL-2006,2026-08-14,New York,meals,Sweetgreen,64.39,yes,Dinner
+L-3024,CL-2006,2026-08-14,New York,hotel,Marriott,388.7,yes,"Hotel, one night (conference rate)"
+L-3025,CL-2007,2026-08-15,Toronto,flight,Porter,415.42,yes,Economy return flight
+L-3026,CL-2007,2026-08-15,Toronto,hotel,Marriott,152.83,yes,"Hotel, one night"
+L-3027,CL-2007,2026-08-16,Toronto,meals,Earls Kitchen,50.5,yes,Dinner
+L-3028,CL-2007,2026-08-16,Toronto,hotel,Marriott,252.0,yes,"Hotel, one night (suite)"
+L-3029,CL-2008,2026-08-17,London,flight,United,770.0,yes,"Return flight, booked late"
+L-3030,CL-2008,2026-08-17,London,hotel,Marriott,232.48,yes,"Hotel, one night"
+L-3031,CL-2008,2026-08-18,London,meals,Noodle House,60.25,yes,Dinner
+L-3032,CL-2009,2026-08-19,Montreal,flight,Porter,797.77,yes,Economy return flight
+L-3033,CL-2009,2026-08-19,Montreal,hotel,Holiday Inn,194.38,yes,"Hotel, one night"
+L-3034,CL-2009,2026-08-20,Montreal,meals,The Keg,54.96,yes,Dinner
+L-3035,CL-2009,2026-08-20,Montreal,ground,City Taxi,152.0,yes,Car service to the airport
+L-3036,CL-2010,2026-08-21,Montreal,flight,Air Canada,479.31,yes,Economy return flight
+L-3037,CL-2010,2026-08-21,Montreal,hotel,Marriott,126.2,yes,"Hotel, one night"
+L-3038,CL-2010,2026-08-22,Montreal,meals,Sweetgreen,40.42,yes,Dinner
+L-3039,CL-2010,2026-08-22,Montreal,alcohol,The Wine Bar,91.3,yes,Bottle of wine for the team
+L-3040,CL-2011,2026-08-23,London,flight,Air Canada,1884.26,yes,Economy return flight
+L-3041,CL-2011,2026-08-23,London,hotel,Holiday Inn,371.31,yes,"Hotel, one night"
+L-3042,CL-2011,2026-08-24,London,meals,The Keg,77.92,yes,Dinner
+L-3043,CL-2011,2026-08-24,London,personal,GoodLife Fitness,38.98,yes,Gym day pass
+L-3044,CL-2012,2026-08-25,Montreal,flight,Air Canada,605.21,yes,Economy return flight
+L-3045,CL-2012,2026-08-25,Montreal,hotel,Marriott,178.11,yes,"Hotel, one night"
+L-3046,CL-2012,2026-08-26,Montreal,meals,Noodle House,60.49,yes,Dinner
+L-3047,CL-2012,2026-08-26,Montreal,fine,City Parking Authority,89.56,yes,Parking ticket
+L-3048,CL-2013,2026-08-27,Toronto,flight,Porter,390.58,yes,Economy return flight
+L-3049,CL-2013,2026-08-27,Toronto,hotel,Hyatt Place,180.98,yes,"Hotel, one night"
+L-3050,CL-2013,2026-08-28,Toronto,meals,Sweetgreen,56.96,yes,Dinner
+L-3051,CL-2013,2026-08-28,Toronto,software,Figma,144.0,yes,Annual Figma licence
+L-3052,CL-2014,2026-08-29,London,flight,WestJet,526.7,yes,Economy return flight
+L-3053,CL-2014,2026-08-29,London,hotel,Hyatt Place,263.22,yes,"Hotel, one night"
+L-3054,CL-2014,2026-08-30,London,meals,Sweetgreen,66.5,yes,Dinner
+L-3055,CL-2014,2026-08-30,London,software,Figma,144.0,yes,"Annual Figma licence, IT approval ITA-4471"
+L-3056,CL-2015,2026-08-31,London,flight,Porter,460.93,yes,Economy return flight
+L-3057,CL-2015,2026-08-31,London,hotel,Marriott,196.87,yes,"Hotel, one night"
+L-3058,CL-2015,2026-09-01,London,meals,Noodle House,59.47,yes,Dinner
+L-3059,CL-2015,2026-09-01,London,equipment,Best Buy,129.99,yes,"Wireless keyboard, IT approval ITA-3902"
+L-3060,CL-2016,2026-08-03,Toronto,flight,United,1395.73,yes,Economy return flight
+L-3061,CL-2016,2026-08-03,Toronto,hotel,Marriott,258.6,yes,"Hotel, one night"
+L-3062,CL-2016,2026-08-04,Toronto,meals,Earls Kitchen,69.62,yes,Dinner
+L-3063,CL-2016,2026-08-04,Toronto,meals,Earls Kitchen,69.62,yes,Dinner
+L-3064,CL-2017,2026-06-14,London,flight,WestJet,545.79,yes,Economy return flight
+L-3065,CL-2017,2026-06-14,London,hotel,Marriott,192.96,yes,"Hotel, one night"
+L-3066,CL-2017,2026-06-15,London,meals,Pret A Manger,50.9,yes,Dinner
+L-3067,CL-2017,2026-06-15,London,ground,Uber,38.48,yes,Taxi to client office
+L-3068,CL-2018,2026-08-07,Vancouver,flight,Air Canada,726.27,yes,Economy return flight
+L-3069,CL-2018,2026-08-07,Vancouver,hotel,Hilton,256.9,yes,"Hotel, one night"
+L-3070,CL-2018,2026-08-08,Vancouver,meals,Sweetgreen,76.88,yes,Dinner
+L-3071,CL-2018,2026-08-08,Vancouver,ground,Uber,18.5,no,Subway fare
+L-3072,CL-2019,2026-08-09,Toronto,flight,Air Canada,411.51,yes,Economy return flight
+L-3073,CL-2019,2026-08-09,Toronto,hotel,Hilton,144.77,yes,"Hotel, one night"
+L-3074,CL-2019,2026-08-10,Toronto,meals,Pret A Manger,38.22,yes,Dinner
+L-3075,CL-2019,2026-08-10,Toronto,ground,Uber,33.66,no,Taxi to client office
+L-3076,CL-2020,2026-08-11,New York,flight,United,560.0,yes,Economy return flight
+L-3077,CL-2020,2026-08-11,New York,hotel,Holiday Inn,258.79,yes,"Hotel, one night"
+L-3078,CL-2020,2026-08-12,New York,meals,Earls Kitchen,61.71,yes,Dinner
+L-3079,CL-2021,2026-08-13,New York,flight,United,800.71,yes,Economy return flight
+L-3080,CL-2021,2026-08-13,New York,hotel,Hyatt Place,303.27,yes,"Hotel, one night"
+L-3081,CL-2021,2026-08-14,New York,meals,Bistro Nord,77.43,yes,Dinner
+L-3082,CL-2021,2026-08-15,New York,meals,Bistro Nord,70.2,yes,Lunch
+L-3083,CL-2021,2026-08-15,New York,meals,Sweetgreen,72.54,yes,Dinner
+L-3084,CL-2022,2026-08-15,Montreal,flight,Porter,369.07,yes,Economy return flight
+L-3085,CL-2022,2026-08-15,Montreal,hotel,Hilton,129.63,yes,"Hotel, one night"
+L-3086,CL-2022,2026-08-16,Montreal,meals,Sweetgreen,41.46,yes,Dinner
+L-3087,CL-2022,2026-08-16,Montreal,ground,City Taxi,44.51,yes,Taxi to client office
+L-3088,CL-2023,2026-08-17,Toronto,flight,United,2042.2,yes,Economy return flight
+L-3089,CL-2023,2026-08-17,Toronto,hotel,Marriott,263.21,yes,"Hotel, one night"
+L-3090,CL-2023,2026-08-18,Toronto,meals,Sweetgreen,96.57,yes,Dinner
+L-3091,CL-2023,2026-08-19,Toronto,meals,Bistro Nord,134.4,yes,Client dinner
+L-3092,CL-2024,2026-08-19,Toronto,flight,Air Canada,567.25,yes,Economy return flight
+L-3093,CL-2024,2026-08-19,Toronto,hotel,Marriott,161.41,yes,"Hotel, one night"
+L-3094,CL-2024,2026-08-20,Toronto,meals,Noodle House,60.42,yes,Dinner
+L-3095,CL-2024,2026-08-20,Toronto,hotel,Hyatt Place,253.0,yes,"Hotel, one night (conference rate)"
+L-3096,CL-2025,2026-08-21,Toronto,flight,United,503.52,yes,Economy return flight
+L-3097,CL-2025,2026-08-21,Toronto,hotel,Hilton,206.05,yes,"Hotel, one night"
+L-3098,CL-2025,2026-08-22,Toronto,meals,Earls Kitchen,60.72,yes,Dinner
+L-3099,CL-2025,2026-08-22,Toronto,alcohol,The Wine Bar,92.0,yes,Bottle of wine for the team
+L-3100,CL-2026,2026-08-23,New York,flight,United,695.02,yes,Economy return flight
+L-3101,CL-2026,2026-08-23,New York,hotel,Hyatt Place,291.53,yes,"Hotel, one night"
+L-3102,CL-2026,2026-08-24,New York,meals,Pret A Manger,96.92,yes,Dinner
+L-3103,CL-2026,2026-08-24,New York,meals,Pret A Manger,96.92,yes,Dinner
+L-3104,CL-2027,2026-06-26,New York,flight,WestJet,393.19,yes,Economy return flight
+L-3105,CL-2027,2026-06-26,New York,hotel,Hyatt Place,217.77,yes,"Hotel, one night"
+L-3106,CL-2027,2026-06-27,New York,meals,The Keg,69.94,yes,Dinner
+L-3107,CL-2027,2026-06-27,New York,ground,City Taxi,71.69,yes,Taxi to client office
+L-3108,CL-2028,2026-08-27,Toronto,flight,United,1469.0,yes,Economy return flight
+L-3109,CL-2028,2026-08-27,Toronto,hotel,Holiday Inn,263.34,yes,"Hotel, one night"
+L-3110,CL-2028,2026-08-28,Toronto,meals,The Keg,95.78,yes,Dinner
+L-3111,CL-2028,2026-08-28,Toronto,ground,Uber,37.78,no,Taxi to client office
+L-3112,CL-2029,2026-08-29,Montreal,flight,WestJet,531.77,yes,Economy return flight
+L-3113,CL-2029,2026-08-29,Montreal,hotel,Marriott,186.57,yes,"Hotel, one night"
+L-3114,CL-2029,2026-08-30,Montreal,meals,Noodle House,43.16,yes,Dinner
+L-3115,CL-2029,2026-08-30,Montreal,software,Figma,144.0,yes,Annual Figma licence
+L-3116,CL-2030,2026-08-31,Vancouver,flight,WestJet,769.17,yes,Economy return flight
+L-3117,CL-2030,2026-08-31,Vancouver,hotel,Holiday Inn,244.96,yes,"Hotel, one night"
+L-3118,CL-2030,2026-09-01,Vancouver,meals,The Keg,63.56,yes,Dinner
+L-3119,CL-2030,2026-09-01,Vancouver,ground,Lyft,52.86,yes,Taxi to client office
+L-3120,CL-2031,2026-08-03,Toronto,flight,WestJet,473.57,yes,Economy return flight
+L-3121,CL-2031,2026-08-03,Toronto,hotel,Hyatt Place,150.83,yes,"Hotel, one night"
+L-3122,CL-2031,2026-08-04,Toronto,meals,Bistro Nord,41.71,yes,Dinner
+L-3123,CL-2031,2026-08-04,Toronto,ground,City Taxi,38.41,yes,Taxi to client office
+L-3124,CL-2032,2026-08-05,Toronto,flight,Porter,420.8,yes,Economy return flight
+L-3125,CL-2032,2026-08-05,Toronto,hotel,Holiday Inn,189.27,yes,"Hotel, one night"
+L-3126,CL-2032,2026-08-06,Toronto,meals,Sweetgreen,52.75,yes,Dinner
+L-3127,CL-2032,2026-08-07,Toronto,meals,Earls Kitchen,108.75,yes,Client dinner
+L-3128,CL-2033,2026-08-07,Vancouver,flight,United,804.97,yes,Economy return flight
+L-3129,CL-2033,2026-08-07,Vancouver,hotel,Marriott,239.57,yes,"Hotel, one night"
+L-3130,CL-2033,2026-08-08,Vancouver,meals,Noodle House,60.64,yes,Dinner
+L-3131,CL-2033,2026-08-08,Vancouver,hotel,Hyatt Place,382.2,yes,"Hotel, one night (suite)"
+L-3132,CL-2034,2026-08-09,Montreal,flight,WestJet,660.0,yes,"Return flight, booked late"
+L-3133,CL-2034,2026-08-09,Montreal,hotel,Hyatt Place,141.63,yes,"Hotel, one night"
+L-3134,CL-2034,2026-08-10,Montreal,meals,Bistro Nord,37.87,yes,Dinner
+L-3135,CL-2035,2026-08-11,Vancouver,flight,United,1579.24,yes,Economy return flight
+L-3136,CL-2035,2026-08-11,Vancouver,hotel,Hilton,293.94,yes,"Hotel, one night"
+L-3137,CL-2035,2026-08-12,Vancouver,meals,Bistro Nord,92.38,yes,Dinner
+L-3138,CL-2035,2026-08-12,Vancouver,personal,GoodLife Fitness,82.32,yes,Gym day pass
+L-3139,CL-2036,2026-08-13,New York,flight,Porter,447.95,yes,Economy return flight
+L-3140,CL-2036,2026-08-13,New York,hotel,Hyatt Place,229.9,yes,"Hotel, one night"
+L-3141,CL-2036,2026-08-14,New York,meals,The Keg,68.33,yes,Dinner
+L-3142,CL-2036,2026-08-14,New York,meals,The Keg,68.33,yes,Dinner
+L-3143,CL-2037,2026-06-20,Toronto,flight,WestJet,495.68,yes,Economy return flight
+L-3144,CL-2037,2026-06-20,Toronto,hotel,Hilton,196.01,yes,"Hotel, one night"
+L-3145,CL-2037,2026-06-21,Toronto,meals,Pret A Manger,41.96,yes,Dinner
+L-3146,CL-2037,2026-06-21,Toronto,ground,City Taxi,35.87,yes,Taxi to client office
+L-3147,CL-2038,2026-08-17,Toronto,flight,Air Canada,664.06,yes,Economy return flight
+L-3148,CL-2038,2026-08-17,Toronto,hotel,Hyatt Place,192.49,yes,"Hotel, one night"
+L-3149,CL-2038,2026-08-18,Toronto,meals,Earls Kitchen,76.9,yes,Dinner
+L-3150,CL-2038,2026-08-18,Toronto,ground,Lyft,50.01,no,Taxi to client office
+L-3151,CL-2039,2026-08-19,New York,flight,Porter,505.3,yes,Economy return flight
+L-3152,CL-2039,2026-08-19,New York,hotel,Holiday Inn,188.03,yes,"Hotel, one night"
+L-3153,CL-2039,2026-08-20,New York,meals,Noodle House,47.93,yes,Dinner
+L-3154,CL-2039,2026-08-20,New York,equipment,Best Buy,89.99,yes,Wireless keyboard
+L-3155,CL-2040,2026-08-21,Toronto,flight,United,1614.86,yes,Economy return flight
+L-3156,CL-2040,2026-08-21,Toronto,hotel,Holiday Inn,261.83,yes,"Hotel, one night"
+L-3157,CL-2040,2026-08-22,Toronto,meals,Noodle House,83.42,yes,Dinner
+L-3158,CL-2040,2026-08-23,Toronto,meals,Earls Kitchen,72.0,yes,Lunch
+L-3159,CL-2040,2026-08-23,Toronto,meals,Noodle House,74.4,yes,Dinner
