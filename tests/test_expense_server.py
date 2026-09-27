@@ -99,3 +99,37 @@ def test_get_policy_limits_every_seed_combo_is_covered(db):
     for level in levels:
         for city in cities:
             expense_server.get_policy_limits(level, city)  # must not raise
+
+
+def test_record_decision_writes_one_row(db):
+    import sqlite3
+
+    result = expense_server.record_decision("L-3001", "approve", "POLICY.md \u00a71.2")
+
+    assert result == {"line_id": "L-3001", "decision": "approve", "clause": "POLICY.md \u00a71.2"}
+
+    conn = sqlite3.connect(db)
+    try:
+        rows = conn.execute(
+            "SELECT line_id, decision, clause FROM decisions WHERE line_id = ?", ("L-3001",)
+        ).fetchall()
+    finally:
+        conn.close()
+    assert rows == [("L-3001", "approve", "POLICY.md \u00a71.2")]
+
+
+def test_record_decision_called_twice_writes_two_rows(db):
+    # No dedup/upsert per CAP-5's scope -- each call is one row, full stop.
+    import sqlite3
+
+    expense_server.record_decision("L-3002", "flag", "POLICY.md \u00a73")
+    expense_server.record_decision("L-3002", "reject", "POLICY.md \u00a75.1")
+
+    conn = sqlite3.connect(db)
+    try:
+        count = conn.execute(
+            "SELECT COUNT(*) FROM decisions WHERE line_id = ?", ("L-3002",)
+        ).fetchone()[0]
+    finally:
+        conn.close()
+    assert count == 2
