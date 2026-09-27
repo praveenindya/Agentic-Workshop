@@ -1,0 +1,41 @@
+- id: "1"
+  title: Agent scaffolding
+  description: >-
+    Implements CAP-1 (entrypoint), CAP-2 (Gemini/Groq provider switch by
+    env var), and CAP-3 (correct get_claim -> get_employee ->
+    get_policy_limits call order with proper ID threading). No real
+    decision logic yet -- this makes the agent runnable end to end
+    against Epic 1's tools.
+
+- id: "2"
+  title: Policy-driven decisions, persisted
+  description: >-
+    Implements CAP-4 (precedence-based decision + clause per POLICY.md)
+    and CAP-6 (persisting every decision via record_decision) together --
+    an unrecorded decision is useless. This is the story checked directly
+    against eval/labelled.csv; get it right before anything else.
+
+- id: "3"
+  title: Cross-claim duplicate detection
+  description: >-
+    Implements CAP-5: duplicate detection reaching across an employee's
+    full claim history via Epic 1's cross-claim tool, not just the
+    current claim.
+  invoke_dev_with: >-
+    Confirm Epic 1's cross-claim tool name/signature is settled
+    (spec-expense-epic-1's Open Questions) before wiring this up --
+    don't guess at a signature that might change underneath you.
+
+- id: "4"
+  title: The $500 human-approval boundary
+  description: >-
+    Implements CAP-7. Held status for an approved item over $500 is a
+    derived check (decision=approve AND amount>500), not new
+    agent-written state -- no schema change, no payout path, ever.
+
+- id: "5"
+  title: Untrusted claim-text safety
+  description: >-
+    Implements CAP-8: claim and line-item free text is treated strictly
+    as data. Verify with a line item whose description contains an
+    embedded instruction and confirm it has zero effect on the decision.
