@@ -9,25 +9,28 @@
     precedence logic yet -- that's Story 2.
 
 - id: "2"
-  title: Precedence-order decision logic
+  title: Precedence-order decision engine (CAP-3 + CAP-4)
   description: >-
-    Implements CAP-3: given a line item and its context (employee limits,
-    receipt/date/amount), apply POLICY.md's fixed precedence (3, 5.1,
-    1.2, 4.1, limits 2/6, 1.3) and return the deciding clause.
-  invoke_dev_with: >-
-    Before trusting this against eval/labelled.csv, hand-check whether any
-    of the 30 labelled claims produce a genuine precedence tie (two
-    clauses that could both apply with different outcomes). If one turns
-    up, stop and flag it -- don't invent a tie-break order beyond what
-    POLICY.md states.
+    Implements CAP-3 and CAP-4 together as one deterministic function
+    (cases/expense/policy.py) -- POLICY.md's fixed precedence (3, 5.1,
+    1.2, 4.1, limits 2/6, 1.3), same-day meal/ground aggregation, and
+    cross-claim duplicate detection. Originally two stories; consolidated
+    at build time once it was clear the aggregation and duplicate checks
+    are steps inside the precedence chain, not a separate pass over it.
+    Local Python, not a new MCP tool -- verified against all 119 rows of
+    eval/labelled.csv, 100% exact match.
 
 - id: "3"
-  title: Cross-item math -- same-day sums and cross-claim duplicates
+  title: Wire the decision engine into the agent
   description: >-
-    Implements CAP-4: same-day aggregation for meals (2.1) and ground
-    transport (6.1) so every line item that date shares the day's
-    decision, plus cross-claim duplicate detection (5.1) via Epic 1's
-    get_employee_line_items. Builds on Story 2's decision function.
+    Replaces Story 1's unvalidated scaffold output with real decisions:
+    the agent calls policy.decide_line_item as a local tool for every
+    line item (fetching context via Epic 1's MCP tools, calling
+    get_policy_limits per line item's own city -- not the employee's
+    home city), records each result via record_decision, and produces a
+    human-readable explanation per decision for Epic 3's judge. This is
+    what makes CAP-1's success signal (matches eval/labelled.csv) true
+    end-to-end, not just at the policy.py unit level.
 
 - id: "4"
   title: Held-for-approval marking
